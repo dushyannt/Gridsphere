@@ -1,0 +1,287 @@
+/* blog.css */
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    padding-top: 100px;
+    font-family: 'Playfair Display', serif;
+    line-height: 1.6;
+    background-color: #101010; /* Deep Black */
+    color: #F0EAD6; /* Dull Gold */
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #506C57; /* Dark Green */
+    background-color: #101010; /* Deep Black */
+    color: #F0EAD6; /* Dull Gold */
+}
+header img {
+    height: 50px;
+}
+nav {
+    display: flex;
+    align-items: center;
+}
+nav a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #F0EAD6; /* Dull Gold */
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+nav a:hover {
+    color: #506C57; /* Dark Green */
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #506C57; /* Dark Green */
+}
+.tabs div {
+    padding: 10px 20px;
+    cursor: pointer;
+    position: relative;
+    font-weight: 600;
+    transition: color 0.3s ease, transform 0.3s ease;
+    color: #F0EAD6; /* Dull Gold */
+}
+.tabs div::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #506C57; /* Dark Green */
+    transition: width 0.3s ease-in-out;
+}
+.tabs div:hover::after {
+    width: 100%;
+}
+.tabs .active {
+    color: #506C57; /* Dark Green */
+    font-weight: bold;
+}
+.tabs div:hover {
+    transform: scale(1.05);
+}
+
+/* Content */
+.content {
+    padding: 40px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+.content h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #F0EAD6; /* Dull Gold */
+    font-weight: bold;
+}
+
+/* Blog Section */
+.blogs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+.blog {
+    width: 30%;
+    background-color: #101010; /* Deep Black */
+    border-radius: 8px;
+    border: 1px solid #506C57; /* Dark Green */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.blog img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.blog .text {
+    padding: 20px;
+}
+.blog .text h3 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #F0EAD6; /* Dull Gold */
+}
+.blog .text p {
+    margin-bottom: 15px;
+    color: #F0EAD6; /* Dull Gold */
+}
+.blog .text a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #506C57; /* Dark Green */
+    transition: color 0.3s ease;
+}
+.blog:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Testimonials */
+.testimonials {
+    background-color: #506C57; /* Dark Green */
+    padding: 40px 20px;
+    text-align: center;
+    color: #F0EAD6; /* Dull Gold */
+}
+.testimonials h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+.testimonial-slider {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+.testimonial {
+    max-width: 300px;
+    padding: 20px;
+    margin: 0 10px;
+    background-color: #101010; /* Deep Black */
+    border-radius: 8px;
+    border: 1px solid #506C57; /* Dark Green */
+    color: #F0EAD6; /* Dull Gold */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    min-height: 200px;
+}
+.testimonial.active {
+    opacity: 1;
+}
+.testimonial p {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+.testimonial span {
+    font-weight: bold;
+    color: #F0EAD6; /* Dull Gold */
+}
+.testimonial:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* Call-to-Action Section */
+.cta {
+    background-color: #506C57; /* Dark Green */
+    color: #F0EAD6; /* Dull Gold */
+    padding: 50px 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+.cta h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+.cta a {
+    background-color: #F0EAD6; /* Dull Gold */
+    padding: 15px 30px;
+    text-decoration: none;
+    color: #101010; /* Deep Black */
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.cta a:hover {
+    background-color: #101010; /* Deep Black */
+    color: #F0EAD6; /* Dull Gold */
+}
+
+footer {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #101010;
+    color: #F0EAD6;
+    font-weight: 600;
+}
+footer p {
+    margin-bottom: 20px;
+}
+footer .social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+footer .social-icons a {
+    margin: 0 15px;
+    font-size: 24px;
+    color: #F0EAD6;
+    transition: color 0.3s ease;
+}
+footer .social-icons a:hover {
+    color: #506C57;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media(max-width: 1430px){
+    .para{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media(max-width: 1200px){
+    
+}
+
+@media(max-width: 970px){
+    
+}
+
+@media(max-width: 870px){
+    
+}
+
+@media(max-width: 770px){
+    
+}
+
+@media(max-width: 670px){
+    
+
+}
+
+@media(max-width: 470px){
+    
+}
+

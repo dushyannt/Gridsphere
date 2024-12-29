@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Grid Sphere</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="../css/contact.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+    
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header style="backdrop-filter: blur(10px);">
+        <a href="../index.html" class="logo">
+            <img src="../assets/logo1.png" style="width: 220px; height: 50px;">
+        </a>
+
+        <ul class="navlist">
+            <li><a href="../index.html" style="text-decoration: none;">Home</a></li>
+            <li><a href="../html/company.html" style="text-decoration: none;">About</a></li>
+            <li><a href="../html/services.html" style="text-decoration: none;">services</a></li>
+            <li><a href="../html/blogs.html" style="text-decoration: none;">Blogs&News</a></li>
+            <li><a href="../html/products.html" style="text-decoration: none;">Products</a></li>
+            <li><a href="../html/contact.html" style="text-decoration: none;">Contact</a></li>
+        </ul>
+
+        <div class="right-content">
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+
+        
+    </header>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-form">
+            <h2>Contact Us</h2>
+            <p>We would love to hear from you! Whether you have a question, feedback, or just want to connect, feel free to reach out.</p>
+            <form action="../script/contact_form.php" method="POST">
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+        <div class="contact-info">
+            <h2>Contact Information</h2>
+            <p><strong>Address:</strong> Grid Sphere, Sector 15, Noida, India</p>
+            <p><strong>Email:</strong> <a href="mailto:info@gridsphere.com">info@gridsphere.in</a></p>
+            <p><strong>Phone:</strong> +91 821 976 5685</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/grid-sphere-9b0a50341/" target="_blank" class="fab fa-linkedin"></a>
+                <a href="https://www.facebook.com/GridSphere" target="_blank" class="fab fa-facebook"></a>
+                <a href="https://twitter.com/GridSphere" target="_blank" class="fab fa-twitter"></a>
+                <a href="https://www.instagram.com/gridsphere" target="_blank" class="fab fa-instagram"></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Grid Sphere © 2024. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/GridSphere" class="fab fa-facebook"></a>
+            <a href="https://x.com/GridSphere" class="fab fa-twitter"></a>
+            <a href="https://www.instagram.com/gridsphere" class="fab fa-instagram"></a>
+            <a href="https://www.linkedin.com/in/grid-sphere-9b0a50341/" class="fab fa-linkedin"></a>
+        </div>
+    </footer>
+    <script src="../script/scripts.js"></script>
+</body>
+</html>

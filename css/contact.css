@@ -1,0 +1,215 @@
+/* contact.css */
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #101010;
+    color: #F0EAD6;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #101010;
+    color: #F0EAD6;
+    border-bottom: 1px solid #506C57;
+}
+header img {
+    height: 50px;
+}
+nav {
+    display: flex;
+    align-items: center;
+}
+nav a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #F0EAD6;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+nav a:hover {
+    color: #506C57;
+}
+
+/* Contact Section */
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 10%;
+    gap: 40px;
+    padding-top: 150px;
+    background-color: #101010;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    flex-wrap: wrap;
+}
+
+/* Contact Form and Contact Info Boxes */
+.contact-form, .contact-info {
+    flex: 1 1 45%;
+    background-color: #1a1a1a; /* Darker background for boxes */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 2px solid #506C57; /* Green border around boxes */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect */
+}
+
+/* Hover Effect for Boxes */
+.contact-form:hover, .contact-info:hover {
+    transform: scale(1.05); /* Slight scale-up on hover */
+    box-shadow: 0 10px 30px rgba(80, 108, 87, 0.3); /* Box-shadow effect */
+}
+
+.contact-form h2, .contact-info h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #F0EAD6;
+    font-family: 'Playfair Display', serif;
+}
+.contact-form p{
+    padding-bottom: 20px;
+}
+
+/* Form Fields */
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #506C57;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #101010;
+    color: #F0EAD6;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+    border-color: #506C57;
+}
+
+button {
+    background-color: #506C57;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #F0EAD6;
+    color: #101010;
+}
+
+/* Contact Info */
+.contact-info p {
+    margin: 10px 0;
+}
+
+.contact-info a {
+    color: #F0EAD6;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #506C57;
+}
+
+/* Social Icons Hover */
+.social-icons a {
+    margin: 0 15px;
+    font-size: 24px;
+    color: #F0EAD6;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #506C57;
+    transform: translateY(-5px); /* Social icon animation */
+}
+
+/* Footer */
+footer {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #101010;
+    color: #F0EAD6;
+    font-weight: 600;
+}
+footer p {
+    margin-bottom: 20px;
+}
+footer .social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+footer .social-icons a {
+    margin: 0 15px;
+    font-size: 24px;
+    color: #F0EAD6;
+    transition: color 0.3s ease;
+}
+footer .social-icons a:hover {
+    color: #506C57;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .contact-section {
+        flex-direction: column;
+        padding: 30px 5%;
+    }
+
+    .contact-form, .contact-info {
+        flex: none;
+        width: 100%;
+    }
+}
+
+@media(max-width: 1430px){
+    .para{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media(max-width: 1200px){
+    
+}
+
+@media(max-width: 970px){
+    
+}
+
+@media(max-width: 870px){
+    
+}
+
+@media(max-width: 770px){
+    
+}
+
+@media(max-width: 670px){
+    
+
+}
+
+@media(max-width: 470px){
+    
+}
+

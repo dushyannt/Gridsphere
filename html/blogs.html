@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs - Grid Sphere</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Lato:wght@400&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="../css/blogs.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+</head>
+<body>
+    <!-- Header -->
+    <header style="backdrop-filter: blur(10px);">
+        <a href="../index.html" class="logo">
+            <img src="../assets/logo1.png" style="width: 220px; height: 50px;">
+        </a>
+
+        <ul class="navlist">
+            <li><a href="../index.html" style="text-decoration: none;">Home</a></li>
+            <li><a href="../html/company.html" style="text-decoration: none;">About</a></li>
+            <li><a href="../html/services.html" style="text-decoration: none;">services</a></li>
+            <li><a href="../html/blogs.html" style="text-decoration: none;">Blogs&News</a></li>
+            <li><a href="../html/products.html" style="text-decoration: none;">Products</a></li>
+            <li><a href="../html/contact.html" style="text-decoration: none;">Contact</a></li>
+        </ul>
+
+        <div class="right-content">
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+
+        
+    </header>
+
+    <!-- Tabs -->
+    <div class="tabs">
+        <div class="active">Blogs</div>
+        <div onclick="location.href='./news.html'">News & Articles</div>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <h1>Latest Blogs</h1>
+        <div class="blogs">
+            <!-- Blog 1 -->
+            <div class="blog">
+                <img src="../assets/image1.png" alt="Blog Image">
+                <div class="text">
+                    <h3>Blog Title 1</h3>
+                    <p>This is a short description of Blog 1. It covers insights on how technology is reshaping agriculture...</p>
+                    <a href="#">Read more</a>
+                </div>
+            </div>
+            <!-- Blog 2 -->
+            <div class="blog">
+                <img src="../assets/image1.png" alt="Blog Image">
+                <div class="text">
+                    <h3>Blog Title 2</h3>
+                    <p>This is a short description of Blog 2. We discuss IoT's role in monitoring crop health and increasing yield...</p>
+                    <a href="#">Read more</a>
+                </div>
+            </div>
+            <!-- Blog 3 -->
+            <div class="blog">
+                <img src="../assets/image1.png" alt="Blog Image">
+                <div class="text">
+                    <h3>Blog Title 3</h3>
+                    <p>This is a short description of Blog 3. Here, we explore new data analytics trends in the agricultural sector...</p>
+                    <a href="#">Read more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="testimonials">
+        <h2>What Our Clients Say!</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial active">
+                <p>"Grid Sphere's technology has helped us optimize our farm’s productivity like never before. We are grateful for their innovative solutions!"</p>
+                <span>John Doe, Farmer</span>
+            </div>
+            <div class="testimonial">
+                <p>"The precision of Grid Sphere’s data analytics helped us save costs and increase yield. A true game-changer for modern farming."</p>
+                <span>Jane Smith, Agronomist</span>
+            </div>
+            <div class="testimonial">
+                <p>"The IoT devices are extremely reliable, and the insights we get from the data are priceless. Highly recommend their services!"</p>
+                <span>Mark Lee, Farm Manager</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="cta">
+        <h2>Ready to Transform Your Farm with Grid Sphere?</h2>
+        <a href="#">Contact Us</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Grid Sphere © 2024. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/GridSphere" class="fab fa-facebook"></a>
+            <a href="https://x.com/GridSphere" class="fab fa-twitter"></a>
+            <a href="https://www.instagram.com/gridsphere" class="fab fa-instagram"></a>
+            <a href="https://www.linkedin.com/in/grid-sphere-9b0a50341/" class="fab fa-linkedin"></a>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+       let index = 0;
+const testimonials = document.querySelectorAll('.testimonial');
+const totalTestimonials = testimonials.length;
+
+let interval = setInterval(showTestimonial, 1500); // Change testimonial every 1.5 seconds
+
+function showTestimonial() {
+    testimonials.forEach(testimonial => {
+        testimonial.classList.remove('active');
+    });
+
+    testimonials[index].classList.add('active');
+    index = (index + 1) % totalTestimonials;
+}
+
+// Add event listeners to testimonials
+testimonials.forEach(testimonial => {
+    testimonial.addEventListener('mouseenter', () => {
+        clearInterval(interval); // Stop the interval on hover
+        testimonial.classList.add('active'); // Ensure it stays highlighted
+    });
+
+    testimonial.addEventListener('mouseleave', () => {
+        interval = setInterval(showTestimonial, 1500); // Restart the interval on mouse leave
+    });
+});
+
+showTestimonial(); // Show the first testimonial on page load // Show the first testimonial on page load
+    </script>
+    <script src="../script/scripts.js"></script>
+</body>
+</html>
