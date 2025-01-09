@@ -254,34 +254,97 @@ footer .social-icons a:hover {
 }
 
 @media(max-width: 1430px){
-    .para{
+    .para {
         padding-left: 20px;
         padding-right: 20px;
     }
 }
 
 @media(max-width: 1200px){
-    
+    .blogs {
+        justify-content: center;
+        gap: 15px;
+    }
+    .blog {
+        width: 45%; /* Two columns */
+    }
+    .testimonial {
+        max-width: 250px;
+    }
 }
 
 @media(max-width: 970px){
-    
+    .blogs {
+        gap: 15px;
+    }
+    .blog {
+        width: 100%; /* Single column */
+    }
+    .testimonial-slider {
+        flex-direction: column;
+        align-items: center;
+    }
+    .testimonial {
+        max-width: 80%;
+    }
 }
 
 @media(max-width: 870px){
-    
+    .cta h2 {
+        font-size: 28px;
+    }
+    .cta a {
+        font-size: 16px;
+        padding: 12px 20px;
+    }
 }
 
 @media(max-width: 770px){
-    
+    .blogs {
+        gap: 10px;
+    }
+    .blog .text h3 {
+        font-size: 20px;
+    }
+    .blog .text p {
+        font-size: 14px;
+    }
+    .testimonial {
+        padding: 15px;
+    }
 }
 
 @media(max-width: 670px){
-    
-
+    .tabs div {
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+    .cta h2 {
+        font-size: 24px;
+    }
+    .cta a {
+        padding: 10px 15px;
+    }
+    .testimonial {
+        max-width: 100%;
+    }
 }
 
 @media(max-width: 470px){
-    
+    .tabs {
+        flex-direction: column;
+    }
+    .blogs {
+        gap: 10px;
+    }
+    .blog {
+        width: 100%; /* Full width for smaller screens */
+    }
+    .testimonial {
+        padding: 10px;
+        font-size: 14px;
+    }
+    .testimonial p {
+        font-size: 12px;
+    }
 }
-
