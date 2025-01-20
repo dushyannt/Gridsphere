@@ -9,7 +9,6 @@
 body {
     font-family: 'Playfair Display', serif;
     padding-top: 100px;
-    
     line-height: 1.6;
     background-color: #101010; /* Deep Black */
     color: #F0EAD6; /* Dull Gold */
@@ -24,18 +23,37 @@ header {
     border-bottom: 1px solid #8A795D; /* Dull Gold */
     background-color: #101010; /* Black */
     color: #F0EAD6;
+    position: relative;
 }
 header img {
     height: 50px;
 }
+
+/* Hamburger Icon */
  
-.para{
+.nav-menu {
+    display: flex;
+    gap: 20px;
+}
+.nav-menu.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: #101010;
+    padding: 20px;
+    border: 1px solid #8A795D;
+    border-radius: 8px;
+}
+
+/* Paragraph Section */
+.para {
     padding-top: 20px;
     padding-left: 300px;
     padding-right: 300px;
     padding-bottom: 20px;
 }
-
 
 /* Products Section */
 .products {
@@ -125,35 +143,46 @@ footer .social-icons a:hover {
     color: #506C57;
 }
 
-
-@media(max-width: 1430px){
-    .para{
-        padding-left: 20px;
-        padding-right: 20px;
+/* Responsive Design */
+@media(max-width: 1200px) {
+    .para {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .product-item {
+        width: 45%;
     }
 }
 
-@media(max-width: 1200px){
-    
+@media(max-width: 870px) {
+    .product-item {
+        width: 100%;
+    }
+    .nav-menu {
+        display: none;
+    }
+    .hamburger {
+        display: flex;
+    }
 }
 
-@media(max-width: 970px){
-    
+@media(max-width: 670px) {
+    .products h1 {
+        font-size: 28px;
+    }
+    .products p {
+        font-size: 16px;
+    }
 }
 
-@media(max-width: 870px){
-    
-}
-
-@media(max-width: 770px){
-    
-}
-
-@media(max-width: 670px){
-    
-
-}
-
-@media(max-width: 470px){
-    
+@media(max-width: 470px) {
+    header img {
+        height: 40px;
+    }
+    .products {
+        padding: 20px;
+    }
+    .btn {
+        padding: 8px 16px;
+    }
 }

@@ -1,4 +1,8 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = htmlspecialchars($_POST['name']);
     $email = htmlspecialchars($_POST['email']);
@@ -11,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Prepare email
-    $to = "armaansinghdeol04@gmail.com"; // Replace with your email
+    $to = "info@gridsphere.in";
     $subject = "New Contact Form Submission";
     $headers = "From: $email\r\n";
     $headers .= "Reply-To: $email\r\n";
@@ -20,9 +24,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Send email
     if (mail($to, $subject, $body, $headers)) {
-        echo "Message sent successfully!";
+        // Redirect with success
+        header("Location: ../html/contact.html?success=true");
+        exit;
     } else {
-        echo "Failed to send the message. Please try again later.";
+        // Redirect with failure
+        header("Location: ../html/contact.html?success=false");
+        exit;
     }
 } else {
     echo "Invalid request method.";

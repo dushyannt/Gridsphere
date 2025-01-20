@@ -7,6 +7,7 @@
     box-sizing: border-box;
 }
 body {
+    padding-top: 100px;
     font-family: 'Lato', sans-serif;
     background-color: #101010;
     color: #F0EAD6;
