@@ -57,10 +57,20 @@
     </section>
     
     <div class="scroll" data-aos="zoom-out-down" data-aos-duration="1400" data-aos-delay="550">
-        <a href="#">
-            <i class="ri-scroll-to-bottom-line"></i>
-            Scroll Down
-        </a>
+      <a href="#" id="scrollButton">
+        <i class="ri-scroll-to-bottom-line"></i>
+        Scroll Down
+    </a>
+    
+    <script>
+        document.getElementById('scrollButton').addEventListener('click', function(event) {
+            event.preventDefault();
+            window.scrollBy({
+                top: window.innerHeight,
+                behavior: 'smooth'
+            });
+        });
+    </script>
     </div>
 
     <section class="features" id="features">
@@ -71,7 +81,7 @@
               
               <h3 class="fs-2 text-body-emphasis-white" style="padding-bottom: 20px;">On-Site NPK Tester</h3>
               <p>Accurate and reliable soil analysis for better crop management. Get realtime NPK readings at your fingertips and optimize your soil's fertility.</p>
-              <a href="#" class="icon-link " style="text-decoration: none; color: var(--main-color); transition: transform 0.4s ease;" onmouseover="this.style.transform='translateY(-10px) scale(1.1)'" onmouseout="this.style.transform='translateY(0) scale(1)'">
+              <a href="../html/products.html" class="icon-link " style="text-decoration: none; color: var(--main-color); transition: transform 0.4s ease;" onmouseover="this.style.transform='translateY(-10px) scale(1.4)'" onmouseout="this.style.transform='translateY(0) scale(1)'">
                 know more
               </a>
             </div>
@@ -79,7 +89,7 @@
               
               <h3 class="fs-2 text-body-emphasis-white " style="padding-bottom: 20px;">Smart Monitoring Station</h3>
               <p>Monitor your farm's environmental parameters with ease. Our station tracks key metrics such as temperature, humidity, soil moisture, and more.</p>
-              <a href="#" class="icon-link " style="text-decoration: none; color: var(--main-color); transition: transform 0.4s ease;" onmouseover="this.style.transform='translateY(-10px) scale(1.1)'" onmouseout="this.style.transform='translateY(0) scale(1)'">
+              <a href="../html/products.html" class="icon-link " style="text-decoration: none; color: var(--main-color); transition: transform 0.4s ease;" onmouseover="this.style.transform='translateY(-10px) scale(1.4)'" onmouseout="this.style.transform='translateY(0) scale(1)'">
                 Know more
               </a>
             </div>
@@ -87,7 +97,7 @@
               
               <h3 class="fs-2 text-body-emphasis-white" style="padding-bottom: 20px;">Automated Irrigation System</h3>
               <p>Save water and increase crop yield with automated irrigation. Our system adjusts water usage based on real-time data and weather conditions.</p>
-              <a href="#" class="icon-link" style="text-decoration: none; color: var(--main-color); transition: transform 0.4s ease;" onmouseover="this.style.transform='translateY(-10px) scale(1.1)'" onmouseout="this.style.transform='translateY(0) scale(1)'">
+              <a href="../html/products.html" class="icon-link" style="text-decoration: none; color: var(--main-color); transition: transform 0.4s ease;" onmouseover="this.style.transform='translateY(-10px) scale(1.4)'" onmouseout="this.style.transform='translateY(0) scale(1)'">
                 Know more
               </a>
             </div>

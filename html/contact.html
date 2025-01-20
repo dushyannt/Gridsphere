@@ -27,7 +27,7 @@
         <ul class="navlist">
             <li><a href="../index.html" style="text-decoration: none;">Home</a></li>
             <li><a href="../html/company.html" style="text-decoration: none;">About</a></li>
-            <li><a href="../html/services.html" style="text-decoration: none;">services</a></li>
+            <li><a href="../html/services.html" style="text-decoration: none;">Services</a></li>
             <li><a href="../html/blogs.html" style="text-decoration: none;">Blogs&News</a></li>
             <li><a href="../html/products.html" style="text-decoration: none;">Products</a></li>
             <li><a href="../html/contact.html" style="text-decoration: none;">Contact</a></li>
@@ -67,6 +67,11 @@
         </div>
     </section>
 
+    <!-- Prompt Message -->
+    <div id="prompt-message" style="display: none; position: fixed; top: 0; width: 100%; background-color: #4CAF50; color: white; text-align: center; padding: 10px;">
+        Mail sent successfully!
+    </div>
+
     <!-- Footer -->
     <footer>
         <p>Grid Sphere © 2024. All rights reserved.</p>
@@ -78,5 +83,17 @@
         </div>
     </footer>
     <script src="../script/scripts.js"></script>
+    <script>
+        // Check for success parameter in URL
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('success') === 'true') {
+            const prompt = document.getElementById('prompt-message');
+            prompt.style.display = 'block';
+            // Refresh the page after 3 seconds
+            setTimeout(() => {
+                window.location.href = 'contact.html';
+            }, 3000);
+        }
+    </script>
 </body>
 </html>
