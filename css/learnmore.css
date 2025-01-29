@@ -1,0 +1,241 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #101010;
+    color: #F0EAD6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Navigation */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: #101010;
+    border-bottom: 1px solid #8A795D;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Prevent content from being hidden under fixed header */
+main {
+    padding-top: 80px; /* Adjust to match header height */
+}
+
+/* Logo */
+.logo img {
+    height: 50px;
+}
+
+/* Navigation Menu */
+.navlist {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.navlist li {
+    display: inline;
+}
+
+.navlist li a {
+    color: #F0EAD6;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+}
+
+.navlist li a:hover {
+    background-color: #8A795D;
+    color: #101010;
+    border-radius: 5px;
+}
+
+/* Mobile Menu Icon */
+.right-content {
+    display: flex;
+    align-items: center;
+}
+
+#menu-icon {
+    display: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Product Section */
+.product-section {
+    text-align: center;
+    padding: 4rem 10%;
+}
+
+.product-section h1 {
+    font-size: 36px;
+    color: #8A795D;
+}
+
+.subheading {
+    font-size: 1.2rem;
+    color: #8A795D;
+    margin-bottom: 2rem;
+}
+
+.product-image {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+}
+
+/* Product Details */
+.product-details {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #333;
+    border-radius: 8px;
+    color: #F0EAD6;
+}
+
+.product-details h2 {
+    color: #E67E22;
+}
+
+.details-list, .benefits-list {
+    list-style: none;
+    padding: 0;
+}
+
+.details-list li, .benefits-list li {
+    padding: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.benefits-list li strong {
+    color: #8A795D;
+}
+
+/* Call to Action */
+.cta {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    background-color: #E67E22;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #D65C15;
+}
+
+.back-link {
+    display: block;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: #E67E22;
+    text-decoration: none;
+}
+
+/* Footer */
+footer {
+    background-color: #101010;
+    color: #F0EAD6;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.social-icons {
+    margin-top: 1rem;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    /* Show the menu icon */
+    #menu-icon {
+        display: block;
+    }
+
+    /* Hide default navlist */
+    .navlist {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 5%;
+        background-color: #101010;
+        border: 1px solid #8A795D;
+        padding: 15px 0;
+        border-radius: 8px;
+        width: 200px;
+        text-align: center;
+    }
+
+    .navlist.show {
+        display: flex;
+    }
+
+    .navlist li {
+        width: 100%;
+    }
+
+    .navlist li a {
+        display: block;
+        padding: 12px;
+        font-size: 18px;
+    }
+
+    /* Adjust Product Section */
+    .product-section {
+        padding: 5rem 5%;
+    }
+}
+
+@media (max-width: 670px) {
+    .product-section h1 {
+        font-size: 28px;
+    }
+
+    .subheading {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 470px) {
+    header img {
+        height: 40px;
+    }
+
+    .product-section {
+        padding: 20px;
+    }
+
+    .cta-button {
+        padding: 8px 16px;
+    }
+}
