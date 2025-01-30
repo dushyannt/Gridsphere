@@ -1,249 +1,217 @@
-/* company.css */
-
-/* Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    
+:root {
+    --primary-color: #ae8957;
+    --secondary-color: #4CAF50;
+    --dark-bg: #0c0c0c;
+    --card-bg: #1a1a1a;
 }
+
+.our-story {
+    padding-top: 100px;
+}
+
+.img1{
+    padding: 25px 0 25px 0; 
+}
+
 body {
     font-family: 'Playfair Display', serif;
-    line-height: 1.6;
-    background-color: #101010; /* Deep Black */
-    color: #F0EAD6; /* Dull Gold */
-    padding: 0 15px;
+    margin: 0;
+    padding: 0;
+    background-color: #0c0c0c;
+    color: #fff;
 }
 
-/* Header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    border-bottom: 1px solid #8A795D; /* Dull Gold */
-    background-color: #101010; /* Black */
-    color: #F0EAD6;
-}
-header img {
-    height: 50px;
-}
-nav {
-    display: flex;
-    align-items: center;
-}
-nav a {
-    margin: 0 20px;
-    text-decoration: none;
-    color: #F0EAD6;
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-nav a:hover {
-    color: #506C57; /* Dark Green */
-}
-
-/* Tabs */
-.tabs {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #506C57;
-}
-.tabs div {
-    padding: 10px 20px;
-    cursor: pointer;
-    position: relative;
-    font-weight: 600;
-    color: #F0EAD6;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-.tabs div::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #506C57;
-    transition: width 0.3s ease-in-out;
-}
-.tabs div:hover::after {
-    width: 100%;
-}
-.tabs .active {
-    color: #506C57;
+h1, h2, .para {
     font-weight: bold;
-}
-.tabs div:hover {
-    transform: scale(1.05);
+    text-align: center; 
+    margin: 2rem 0;
 }
 
-/* Content */
-.content {
-    padding: 40px 0;
-    animation: fadeIn 1.5s ease-in-out;
+h1, h2 {
+    font-size: 2.0rem;
+    color: var(--primary-color)
 }
-.content h1 {
-    font-size: 42px;
-    margin-bottom: 30px;
+
+.our-story p{
     text-align: center;
-    color: #8A795D; /* Dull Gold */
-    font-weight: bold;
+    line-height: 1.3;
 }
 
-/* Story Section */
-.story {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    margin-top: 40px;
-    flex-wrap: wrap;
+.para{
+    text-transform: capitalize;
 }
-.story .text {
-    width: 60%;
+
+
+
+.parentdiv {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    text-align: left; /* Ensure text is left-aligned */
+}
+
+.div1 {
+    flex: 1 1 60%;
+    /* Ensure text within div1 is left-aligned */
+    text-align: left;
+}
+
+.div2 {
+    flex: 1 1 35%;
+    display: flex;
+    justify-content: flex-start; /* Change from center to flex-start for left alignment */
+    align-items: center;
+}
+
+.para {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color:white;
+    font-weight: bold;
+    
+}
+
+.list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 15px;
+}
+
+.list-items {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.img2 {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.achievements-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background-color: var(--dark-bg);
+    padding: 2rem 0;
+}
+
+/* ...existing code... */
+
+/* Achievements Grid */
+.achievements-grid {
+    display: flex;
+    width: 200%; /* Ensure this accommodates the duplicated content */
+    animation: scrollAchievements 20s linear infinite;
+}
+
+/* Achievement Card */
+.achievements-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid var(--primary-color);
+    flex: 0 0 20%; /* Decreased width from 25% to 20% */
+    box-sizing: border-box;
+    margin: 1rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.story .text:hover {
-    transform: scale(1.02);
-    box-shadow: 0 10px 30px rgba(80, 108, 87, 0.3);
-}
-.story .image {
-    width: 35%;
-}
-.story .image img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(80, 108, 87, 0.3);
+
+.achievements-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Progress Bar */
-.progress-bar {
-    margin: 50px 0;
-    text-align: center;
+/* Keyframes for Infinite Scroll */
+@keyframes scrollAchievements {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
-.progress-bar h2 {
-    font-size: 30px;
-    color: #8A795D; /* Dull Gold */
-    margin-bottom: 20px;
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .achievements-grid {
+        flex-direction: column;
+        animation: none; /* Disable animation on smaller screens */
+        width: 100%;
+    }
+
+    .achievements-card {
+        flex: 0 0 100%;
+        margin: 1rem 0;
+    }
 }
-.progress {
-    background-color: #F0EAD6;
-    width: 100%;
-    height: 20px;
+
+/* Innovation Section */
+.innovation-recognition {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+/* ...existing code... */
+
+.innovation-card {
+    background: var(--card-bg);
+    padding: 2rem;
     border-radius: 10px;
+    text-align: center;
+    border: 1px solid var(--primary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
+    overflow: hidden;
 }
-.progress .progress-fill {
-    height: 100%;
-    width: 70%; /* Set the completion percentage */
-    background-color: #506C57;
-    border-radius: 10px;
+
+.innovation-card::before {
+    content: '';
     position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%);
+    transform: skewX(-25deg);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-/* CTA Section */
-.cta {
-    background-color: #506C57; /* Dark Green */
-    color: #F0EAD6;
-    padding: 50px 20px;
-    text-align: center;
-    margin-top: 40px;
-}
-.cta h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-.cta a {
-    background-color: #F0EAD6;
-    padding: 15px 30px;
-    text-decoration: none;
-    color: #506C57;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-.cta a:hover {
-    background-color: #8A795D;
-    color: #101010; /* Black */
+.innovation-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Footer */
-footer {
-    padding: 40px 20px;
-    text-align: center;
-    background-color: #101010;
-    color: #F0EAD6;
-    font-weight: 600;
-}
-footer p {
-    margin-bottom: 20px;
-}
-footer .social-icons {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-footer .social-icons a {
-    margin: 0 15px;
-    font-size: 24px;
-    color: #F0EAD6;
-    transition: color 0.3s ease;
-}
-footer .social-icons a:hover {
-    color: #506C57;
+.innovation-card:hover::before {
+    opacity: 1;
+    animation: shine 0.75s forwards;
 }
 
-/* Animations */
-@keyframes slideIn {
+@keyframes shine {
     from {
-        transform: translateY(-100%);
-        opacity: 0;
+        left: -75%;
     }
     to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
+        left: 100%;
     }
 }
 
-@media(max-width: 1430px){
-    .para{
-        padding-left: 20px;
-        padding-right: 20px;
-    }
+/* Responsive Navigation */
+
+
+.img1 {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 2rem 0;
 }
 
-@media(max-width: 1200px){
-    
-}
-
-@media(max-width: 970px){
-    
-}
-
-@media(max-width: 870px){
-    
-}
-
-@media(max-width: 770px){
-    
-}
-
-@media(max-width: 670px){
-    
-
-}
-
-@media(max-width: 470px){
-    
-}
 
