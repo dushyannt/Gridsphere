@@ -5,20 +5,22 @@
     --card-bg: #1a1a1a;
 }
 
-.our-story {
-    padding-top: 100px;
-}
-
-.img1{
-    padding: 25px 0 25px 0; 
-}
-
 body {
     font-family: 'Playfair Display', serif;
     margin: 0;
-    padding: 0;
+    padding: 100px 0 0 0;
     background-color: #0c0c0c;
     color: #fff;
+}
+
+.our-story {
+    padding: 0;
+    text-align: center;
+}
+
+.our-story p {
+    padding: 40px 80px;
+    text-align: center;
 }
 
 h1, h2, .para {
@@ -29,68 +31,97 @@ h1, h2, .para {
 
 h1, h2 {
     font-size: 2.0rem;
-    color: var(--primary-color)
-}
-
-.our-story p{
-    text-align: center;
-    line-height: 1.3;
-}
-
-.para{
-    text-transform: capitalize;
-}
-
-
-
-.parentdiv {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 20px;
-    text-align: left; /* Ensure text is left-aligned */
-}
-
-.div1 {
-    flex: 1 1 60%;
-    /* Ensure text within div1 is left-aligned */
-    text-align: left;
-}
-
-.div2 {
-    flex: 1 1 35%;
-    display: flex;
-    justify-content: flex-start; /* Change from center to flex-start for left alignment */
-    align-items: center;
+    color: var(--primary-color);
 }
 
 .para {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color:white;
-    font-weight: bold;
-    
+    text-transform: capitalize;
+    margin: 50px 40px;
+    padding: 0 40px;
 }
 
-.list {
-    list-style-type: disc;
-    padding-left: 20px;
-    margin-top: 15px;
+.parentdiv {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    flex-wrap: wrap; /* Ensure wrapping on smaller screens */
 }
 
-.list-items {
-    margin-bottom: 10px;
-    font-size: 1rem;
+.widget-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between items */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; 
 }
 
-.img2 {
-    max-width: 100%;
-    height: auto;
+.widget-item {
+    background: var(--card-bg);
+    padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.widget-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.widget-title {
+    color: var(--primary-color);
+    font-weight: bold;
+    margin: 0;
+}
+
+.widget-popup {
+    position: absolute;
+    bottom: calc(100% + 15px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    background: var(--dark-bg);
+    padding: 20px;
+    border-radius: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+}
+
+.widget-popup::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: var(--dark-bg) transparent transparent transparent;
+}
+
+.widget-item:hover .widget-popup {
+    opacity: 1;
+    visibility: visible;
+    animation: typing 1s steps(40, end);
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    to {
+        width: 300px;
+        opacity: 1;
+    }
+}
 
 .achievements-container {
     overflow: hidden;
@@ -100,12 +131,10 @@ h1, h2 {
     padding: 2rem 0;
 }
 
-/* ...existing code... */
-
 /* Achievements Grid */
 .achievements-grid {
     display: flex;
-    width: 200%; /* Ensure this accommodates the duplicated content */
+    width: 200%; 
     animation: scrollAchievements 20s linear infinite;
 }
 
@@ -116,7 +145,7 @@ h1, h2 {
     border-radius: 10px;
     text-align: center;
     border: 1px solid var(--primary-color);
-    flex: 0 0 20%; /* Decreased width from 25% to 20% */
+    flex: 0 0 20%;
     box-sizing: border-box;
     margin: 1rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -137,20 +166,6 @@ h1, h2 {
     }
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .achievements-grid {
-        flex-direction: column;
-        animation: none; /* Disable animation on smaller screens */
-        width: 100%;
-    }
-
-    .achievements-card {
-        flex: 0 0 100%;
-        margin: 1rem 0;
-    }
-}
-
 /* Innovation Section */
 .innovation-recognition {
     display: grid;
@@ -158,7 +173,6 @@ h1, h2 {
     gap: 2rem;
     padding: 2rem;
 }
-/* ...existing code... */
 
 .innovation-card {
     background: var(--card-bg);
@@ -186,7 +200,7 @@ h1, h2 {
 
 .innovation-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0,  0.2);
 }
 
 .innovation-card:hover::before {
@@ -203,15 +217,193 @@ h1, h2 {
     }
 }
 
-/* Responsive Navigation */
-
-
 .img1 {
     width: 100%;
-    height: 400px;
+    height: auto; /* Ensure responsiveness */
     object-fit: cover;
     border-radius: 10px;
     margin: 2rem 0;
 }
 
+/* Additional Media Queries for Better Responsiveness */
+@media (max-width: 1200px) {
+    .widget-list {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust for medium screens */
+    }
+    
+    .img1{
+        max-width: 100%; /* Ensure image scales down */
+        width: 100%;
+    }
 
+    .innovation-recognition {
+        padding: 1rem; /* Reduce padding on smaller screens */
+    }
+}
+
+@media (max-width: 992px) {
+    h1, h2 {
+        font-size: 1.5rem; /* Smaller font size for headings */
+    }
+
+    .parentdiv {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .div1 {
+        width: 100%;
+    }
+
+    .div1 p {
+        padding: auto;
+        display: flex;
+        width: 100%;
+        height: 100%;
+    }
+
+    .img1{
+        max-width: 100%; /* Ensure image scales down */
+        width: 100%;
+    }
+
+    .our-story p {
+        text-align: left;
+    }
+
+    .para {
+        display: flex; /* Makes it flexible and responsive */
+        width: 100%; /* Occupies full width of the parent/container */
+        max-width: 100vw; /* Ensures it doesn't exceed the viewport width */
+        height: auto; /* Adjusts height automatically based on content */
+        box-sizing: border-box;
+        padding: 20px;
+        margin: 0 auto; 
+    }
+}
+
+@media (max-width: 768px) {
+    .achievements-grid {
+        flex-direction: column;
+        animation: none;
+        width: 100%;
+    }
+
+    .achievements-card {
+        flex: 0 0 100%;
+        margin: 1rem 0;
+    }
+
+    .our-story p {
+        padding: 20px; /* Reduce padding for smaller screens */
+    }
+    .parentdiv {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+    .widget-list {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust widget grid */
+    }
+    .widget-item {
+        padding: 15px; /* Adjust padding for widget items */
+        margin: 10px; /* Adjust margin for widget items */
+    }
+    .widget-popup {
+        width: 80%; /* Make popup width responsive */
+        max-width: 200px; /* Set a max width for popups */
+        padding: 10px;
+    }
+    .para {
+        margin: 20px 10px; /* Adjust margins for paragraphs */
+        padding: 0 10px; /* Adjust padding for paragraphs */
+    }
+}
+
+@media (max-width: 576px) {
+    h1, h2 {
+        font-size: 1.2rem; /* Further reduce font size for small screens */
+    }
+
+    .img1{
+        max-width: 100%; /* Ensure image scales down */
+        width: 100%;
+    }
+
+    .achievements-card {
+        flex: 0 0 100%; /* Full width for achievement cards */
+        margin: 0.5rem 0; /* Adjust margin for smaller screens */
+    }
+
+    .innovation-card {
+        padding: 1.5rem; /* Reduce padding for innovation cards */
+    }
+
+    .innovation-recognition {
+        padding: 1rem; /* Reduce padding for innovation section */
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust columns for smaller screens */
+    }
+
+    .widget-list {
+        grid-template-columns: 1fr; /* Stack widgets vertically on small screens */
+    }
+
+    .widget-item {
+        padding: 15px; /* Adjust padding for widget items */
+        margin: 10px 0; /* Adjust margin for widget items */
+    }
+
+    .widget-popup {
+        width: 90%; /* Make popup width responsive */
+        max-width: 250px; /* Set a max width for popups */
+    }
+
+    .para {
+        margin: 20px 10px; /* Adjust margins for paragraphs */
+        padding: 0 10px; /* Adjust padding for paragraphs */
+    }
+
+    .our-story p {
+        padding: 20px; 
+    }
+}
+
+a {
+    color: var(--primary-color); 
+    text-decoration: none; 
+}
+
+a:hover {
+    text-decoration: underline; /* Underline links on hover for better visibility */
+}
+
+/* Button Styles */
+.button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: var(--secondary-color); /* Change background on hover */
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--dark-bg);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Footer */
+@media (max-width: 576px) {
+    footer {
+        font-size: 0.9rem; /* Smaller font size for footer on small screens */
+    }
+}
