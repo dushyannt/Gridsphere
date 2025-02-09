@@ -1,0 +1,255 @@
+/* ---------------- Global Styles & Variables (from CSS1) ---------------- */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+}
+:root {
+    --bg-color: #0c0c0c;
+    --text-color: #fff;
+    --main-color: #ae8957;
+    
+    --big-font: 6.6rem;
+    --p-font: 1rem;
+}
+
+body {
+    padding-top: 100px;
+    background: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* ---------------- Header (from CSS1) ---------------- */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 35px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all .50s ease;
+    background: rgba(12, 12, 12, 0.7); /* Semi-transparent background */
+    backdrop-filter: blur(10px);       /* Apply the blur effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+}
+
+.logo {
+    width: 100%;
+    height: auto;
+}
+.navlist {
+    display: flex;
+}
+.navlist a {
+    display: inline-block;
+    margin: 0 35px;
+    color: var(--text-color);
+    font-size: var(--p-font);
+    transition: all .6s ease;
+}
+.navlist a:hover {
+    color: var(--main-color);
+}
+#menu-icon {
+    font-size: 42px;
+    z-index: 10001;
+    cursor: pointer;
+    margin-left: 25px;
+    display: none;
+}
+
+/* ---------------- Blog Detail Specific Styles (from CSS2) ---------------- */
+.blog-detail-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #1a1a1a; /* Slightly lighter background for contrast */
+    border: 1px solid #506C57;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+.blog-detail-header h1 {
+    font-size: 2.8rem;
+    font-family: 'Playfair Display', serif; /* Headings use a serif font */
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    position: relative;
+    padding-bottom: 1rem;
+}
+.blog-detail-header h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: #506C57;
+}
+.blog-detail-meta {
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    color: #a8a895;
+    margin-bottom: 2rem;
+}
+.blog-detail-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 2rem 0;
+    border: 2px solid #506C57;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.blog-detail-content {
+    font-size: 1.1rem;
+    color: #e6e6d0;
+}
+.blog-detail-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    max-width: 80ch;
+}
+.blog-detail-content h2 {
+    font-size: 1.8rem;
+    font-family: 'Playfair Display', serif;
+    margin: 3rem 0 1.5rem;
+    color: #F0EAD6;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+.blog-detail-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #506C57;
+}
+.blog-detail-content ul,
+.blog-detail-content ol {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+}
+.blog-detail-content li {
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+}
+.blog-detail-content ul li::marker {
+    color: #506C57;
+    font-size: 1.2em;
+}
+.blog-detail-content ol {
+    counter-reset: list-counter;
+}
+.blog-detail-content ol li {
+    counter-increment: list-counter;
+}
+.blog-detail-content ol li::before {
+    content: counter(list-counter) ". ";
+    color: #506C57;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+.back-to-blogs {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 3rem 0 1rem;
+    padding: 0.8rem 1.5rem;
+    border: 1px solid #506C57;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+.back-to-blogs:hover {
+    color: #F0EAD6;
+    background: rgba(80, 108, 87, 0.2);
+    transform: translateX(-5px);
+}
+
+/* ---------------- Footer (from CSS1) ---------------- */
+footer {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #101010;
+    color: #F0EAD6;
+    font-weight: 600;
+}
+footer p {
+    margin-bottom: 20px;
+}
+footer .social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+footer .social-icons a {
+    margin: 0 15px;
+    font-size: 24px;
+    color: #F0EAD6;
+    transition: color 0.3s ease;
+}
+footer .social-icons a:hover {
+    color: #506C57;
+}
+
+/* ---------------- Responsive (from CSS2) ---------------- */
+@media (max-width: 768px) {
+    .blog-detail-container {
+        margin: 20px;
+        padding: 25px;
+    }
+    .blog-detail-header h1 {
+        font-size: 2rem;
+    }
+    .blog-detail-image {
+        height: 250px;
+    }
+    .blog-detail-content {
+        font-size: 1rem;
+    }
+    .blog-detail-content h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* ---------------- Mobile Navigation (from CSS1) ---------------- */
+@media (max-width: 870px) {
+    :root {
+        --big-font: 4.0rem;
+    }
+    #menu-icon {
+        display: block;
+    }
+    .navlist {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        padding: 100px 50px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 100%;
+        display: flex;
+        flex-direction: column;
+        backdrop-filter: blur(32px);
+        transition: all .6s ease-in-out;
+    }
+    .navlist a {
+        display: block;
+        padding: 0;
+        margin: 0 0 25px 0;
+        font-size: 1.7rem;
+    }
+    .navlist.open {
+        left: 0;
+    }
+}

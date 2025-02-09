@@ -243,6 +243,24 @@ footer .social-icons a:hover {
     .contact-form, .contact-info {
         flex: none;
         width: 100%;
+        /* Remove background image properties */
+        background-image: none;
+        background-color: #1a1a1a;
+    }
+
+    /* Remove these entire blocks if present */
+    .contact-info::before {
+        display: none;
+    
+    .contact-section {
+        flex-direction: column;
+        padding: 30px 5%;
+    }
+
+    .contact-form, .contact-info {
+        flex: none;
+        width: 100%;
+    }
     }
 }
 
