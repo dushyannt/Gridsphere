@@ -13,64 +13,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" type="text/css" href="css/navbar.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <style>
-
-        .navbar-toggler {
-            background-color:#c7a170;  /* Change background color to white */
-            border: 1px solid #ae8957;   /* Optional: Add border color to make it visible */
-        }
-        
-        .hero {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-          
-        }
     
-
-        .hero.blurred {
-            filter: blur(5px);
-        }
-     
-        
-        @media (max-width: 1000px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
-
-            .hero p {
-                font-size: 2rem;
-            }
-
-            .hero .col-md-6 {
-                text-align: center;
-            }
-
-            .hero .col-md-6 img {
-                max-width: 100%;
-            }
-        }
-
-
-        .navbar {
-            background-color:  black!important;
-        }
-      
-
-        .navbar-brand img {
-            width: 220px;
-            height: 50px;
-        }
-        .navbar-dark .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='beige' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-    }
-   
-    </style>
 </head>
 
 <body>
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
@@ -80,7 +28,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active text-white" aria-current="page" href="../index.html">Home</a>
                     </li>
@@ -170,15 +118,13 @@
           </div>
     </section>
 
-    <footer class="bg-dark text-white py-4">
-        <div class="container text-center">
-            <p>Grid Sphere © 2024. All rights reserved.</p>
-            <div class="social-icons">
-                <a href="https://www.facebook.com/GridSphere" class="fab fa-facebook px-3 text-white"></a>
-                <a href="https://x.com/GridSphere" class="fab fa-twitter px-3 text-white"></a>
-                <a href="https://www.instagram.com/gridsphere" class="fab fa-instagram px-3 text-white"></a>
-                <a href="https://www.linkedin.com/in/grid-sphere-9b0a50341/" class="fab fa-linkedin px-3 text-white"></a>
-            </div>
+    <footer>
+        <p>Grid Sphere © 2024. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/GridSphere" class="fab fa-facebook"></a>
+            <a href="https://x.com/GridSphere" class="fab fa-twitter"></a>
+            <a href="https://www.instagram.com/gridsphere" class="fab fa-instagram"></a>
+            <a href="https://www.linkedin.com/in/grid-sphere-9b0a50341/" class="fab fa-linkedin"></a>
         </div>
     </footer>
 
